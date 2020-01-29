@@ -11,3 +11,7 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 apt update && apt install bazel
 
 apt install openjdk-11-jdk
+
+echo "alias c='clear'" >> ~/.bashrc
+
+source ~/.bashrc
