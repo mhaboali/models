@@ -15,3 +15,7 @@ apt install openjdk-11-jdk
 echo "alias c='clear'" >> ~/.bashrc
 
 source ~/.bashrc
+
+mkdir ~/tcn_data
+mv ~/Downloads/download.sh ~/tcn_data
+./download.sh
