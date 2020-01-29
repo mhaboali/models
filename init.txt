@@ -17,5 +17,5 @@ echo "alias c='clear'" >> ~/.bashrc
 source ~/.bashrc
 
 mkdir ~/tcn_data
-mv ~/Downloads/download.sh ~/tcn_data
-./download.sh
+cp tcn/download.sh ~/tcn_data
+source ~/tcn_data/download.sh
