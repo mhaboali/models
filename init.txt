@@ -10,6 +10,8 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 
 apt update && apt install bazel
 
+apt update && apt full-upgrade
+
 apt install openjdk-11-jdk
 
 echo "alias c='clear'" >> ~/.bashrc
@@ -19,3 +21,13 @@ source ~/.bashrc
 mkdir ~/tcn_data
 cp tcn/download.sh ~/tcn_data
 source ~/tcn_data/download.sh
+
+python download_pretrained.py
+
+export logdir=/tmp/tcn/pouring
+
+export c=configs
+
+export configs=$c/tcn_default.yml,$c/pouring.yml
+
+bazel build -c opt --copt=-mavx --config=cuda train && bazel-bin/train --config_paths $configs --logdir $logdir
