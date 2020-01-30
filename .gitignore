@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 tcn/pretrained_checkpoints/*
+tcn/bazel*
 .Python
 env/
 build/
